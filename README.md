@@ -18,7 +18,7 @@ Spots is a website for sharing pictures of your favorite spots all around the wo
 
 ## Deployment
 This website is deployed to Github Pages. You can view it here:
-[Live Demo](https://github.com/Ltineo/se_project_spots)
+[Live Demo](https://ltineo.github.io/se_project_spots/)
 
 ## Future Improvements
 - Add functionality to like photos
