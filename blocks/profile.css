@@ -75,6 +75,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: auto;
     margin-left: auto;
     gap: 8px;
 }
@@ -97,6 +98,7 @@
      align-items: center;
      text-align: center;
      padding-top: 20px; 
+     margin: 0 auto;
     }
 
     .profile__avatar {

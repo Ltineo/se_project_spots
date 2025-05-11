@@ -39,12 +39,12 @@
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    opacity: 40%;
+    opacity: 100%;
     cursor: pointer;
 }
 
 .card__like-btn:hover {
-    opacity: 40%;
+    opacity: 100%;
 }
 
 @media screen and (max-width: 627px) {
@@ -55,6 +55,9 @@
     .card__title {
         max-width: 250px;
         font-size: 16px;
+    }
+
+    .card__like-button {
         width: 20px;
         height: 18px;
     }
