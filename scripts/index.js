@@ -16,9 +16,8 @@ editProfileBtn.addEventListener("click", function () {
     editProfileNameInput.value = profileNameEl.textContent;
     editProfileDescriptionInput.value = profileDescriptionEl.textContent;
     editProfileModal.classList.add ("modal_is-opened"); }
-editProfileModal.classList.add ("modal_is-opened"); });
 
-editProfileCloseBtn.addEventListener("click, function () {
+editProfileCloseBtn.addEventListener("click", function () {
     editProfileModal.classList.remove ("modal_is-opened"); }); 
 
 
