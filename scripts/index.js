@@ -1,12 +1,12 @@
 const editProfileBtn = document.querySelector(".profile__edit-btn");
-const editProfileModal = document.querySelector("#edit-profile-modal");
+const editProfileModal = document.querySelector("#edit-profile");
 const editProfileCloseBtn = editProfileModal.querySelector(".modal__close-btn");
-const editProfileForm = editProfileModal.querySelector(".modal__form");
+const editProfileForm = editProfileModal.querySelector(".edit-profile__form");
 const editProfileNameInput = editProfileModal.querySelector("#profile-name-input");
 const editProfileDescriptionInput = editProfileModal.querySelector("#profile-description-input");
 
-const newPostBtn = document.querySelector(".profile__new-post-btn");
-const newPostModal = document.querySelector("#new-post-modal");        
+const newPostBtn = document.querySelector(".profile__add-btn");
+const newPostModal = document.querySelector("#new-post");        
 const newPostCloseBtn = newPostModal.querySelector(".modal__close-btn");
 
 const profileNameEl = document.querySelector(".profile__name");
