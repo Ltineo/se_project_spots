@@ -14,7 +14,8 @@ const profileDescriptionEl = document.querySelector(".profile__description");
 
 editProfileBtn.addEventListener("click", function () {
     editProfileNameInput.value = profileNameEl.textContent;
-    editProfileDescriptionInput.value = profileDescriptionEl.textContent;});
+    editProfileDescriptionInput.value = profileDescriptionEl.textContent;
+    editProfileModal.classList.add("modal_is-opened");  });
 
 editProfileCloseBtn.addEventListener("click", function () {
     editProfileModal.classList.remove ("modal_is-opened"); }); 
