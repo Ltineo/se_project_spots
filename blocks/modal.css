@@ -17,8 +17,8 @@
     transition: visibility 0.3s, opacity 0.3s;
 }
 
-.modal__is-opened {
-    visibility: hidden;
+.modal_is-opened {
+    visibility: visible;
     opacity: 1;
 }
 
