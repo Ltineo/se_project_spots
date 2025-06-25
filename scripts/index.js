@@ -28,7 +28,7 @@ editProfileBtn.addEventListener("click", function () {
 editProfileCloseBtn.addEventListener("click", function () {
   closeModal(editProfileModal);
 });
-    editProfileModal.classList.remove ("modal_is-opened"); 
+    editProfileModal.classList.remove ("is-opened"); 
 
     const newPostForm = newPostModal.querySelector(".new-post__form");
     const cardImageInput = newPostModal.querySelector("#card-image-input");
