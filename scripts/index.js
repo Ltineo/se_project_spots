@@ -33,7 +33,7 @@ editProfileCloseBtn.addEventListener("click", function () {
   closeModal(editProfileModal);
 });
 
-const newPostForm = newPostModal.querySelector(".new-post__form");
+const newPostForm = newPostModal.querySelector(".modal__form");
 const cardImageInput = newPostModal.querySelector("#card-image-input");
 const cardTitleInput = newPostModal.querySelector("#card-title-input");
 
