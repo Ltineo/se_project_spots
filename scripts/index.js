@@ -97,12 +97,12 @@ function getCardElement(data) {
   });
 
   const cardDeleteBtnel = cardElement.querySelector(".card__delete-button");
-  cardDeleteBtnel.addEventListener("click", function () => { 
+  cardDeleteBtnel.addEventListener("click", function () { 
     cardElement.remove();
     cardElement.null();
   });
  
-  cardImageEl.addEventListener("click", function () => {
+  cardImageEl.addEventListener("click", function () {
     previewImageEl.src = data.link;
     previewImageEl.alt = data.name;
     previewcaptionEl.textContent = data.name;
@@ -124,7 +124,7 @@ newPostBtn.addEventListener("click", function () {
 
 newPostForm.addEventListener("submit", handleNewPostFormSubmit);
 
-newPostCloseBtn.addEventListener("click", function () => {
+newPostCloseBtn.addEventListener("click", function () {
   closeModal(newPostModal);
 });
 
