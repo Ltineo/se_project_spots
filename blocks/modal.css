@@ -138,7 +138,7 @@
     top: -48px;
     right: 0;
   }
-
+}
 @media screen and (max-width: 480px) {
   .modal__content {
     padding: 22px 12px 12px;
@@ -172,14 +172,10 @@
     max-width: 100%;
     width: 100%;
   }
-
-
-
-
 }
 
 @media screen and (max-width: 627px) {
-  /* placed nelow the media query to be overwritten */
+  /* placed below the media query to be overwritten */
   .modal__close_type_preview {
     top: -48px;
     right: 0;
