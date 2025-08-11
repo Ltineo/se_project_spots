@@ -15,6 +15,10 @@
   transition: visibility 0.3s, opacity 0.3s;
 }
 
+.modal_type_preview {
+  padding: 0 16px;
+}
+
 .modal_is-opened {
   visibility: visible;
   opacity: 1;
@@ -51,8 +55,18 @@
   cursor: pointer;
 }
 
+.modal__close_type_preview{
+  top: 0;
+  right: 52.5px;
+  background-image: url(../images/close.svg);
+}
+
+.modal__close_type_preview:hover {
+  opacity: 0.8;
+}
+
 .modal__title {
-  margin: 0 0 32px;
+  margin: 0 0 32px
   font-weight: 500;
   font-family: "Poppins", sans-serif;
   font-size: 32px;
@@ -98,9 +112,80 @@
   opacity: 0.8;
 }
 
-@media screen and (max-width: 420px) {
+.modal__image-container {
+  position: relative;
+}
+
+.modal__image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  border-radius: 8px;
+}
+
+.modal__caption {
+  margin: 16px 0 0;
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
+  color: white
+}
+
+@media screen and (max-width: 627px) {
+  .modal__close_type_preview {
+    top: -48px;
+    right: 0;
+  }
+
+@media screen and (max-width: 480px) {
+  .modal__content {
+    padding: 22px 12px 12px;
+  }
+
+  .modal__title {
+    font-size: 24px;
+  }
+
+  .modal__close {
+    top:22px;
+    right: 12px;
+  }
+
+
+
+  .modal__form {
+    margin-top: 32px;
+  }
+  .modal__input {
+   font-size: 16px;
+   margin-bottom: 24px;
+  }
+
+  .modal__button {
+    max-width: none;
+
+  }
+
   .modal__submit-btn {
     max-width: 100%;
     width: 100%;
   }
+
+
+
+
 }
+
+@media screen and (max-width: 627px) {
+  /* placed nelow the media query to be overwritten */
+  .modal__close_type_preview {
+    top: -48px;
+    right: 0;
+  }
+
+  .modal__image {
+    max-width: unset;
+  }
+  }
