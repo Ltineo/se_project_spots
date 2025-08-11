@@ -94,7 +94,7 @@ function getCardElement(data) {
   const cardLikeBtnel = cardElement.querySelector(".card__like-button");
  cardLikeBtnel.addEventListener("click", () => {
     cardLikeBtnel.classList.toggle("card__like-button_active");
-  }
+  });
 
   const cardDeleteBtnel = cardElement.querySelector(".card__delete-button");
   cardDeleteBtnel.addEventListener("click", function () => { 
