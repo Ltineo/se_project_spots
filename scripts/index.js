@@ -63,7 +63,7 @@ editProfileCloseBtn.addEventListener("click", function () {
 });
 
 const newPostModalCloseBtn = newPostModal.querySelector(".modal__close-btn");
-newPostModalCloseBtn.addEventListener("click", function () >> {
+newPostModalCloseBtn.addEventListener("click", function () {
   closeModal(newPostModal);
 });
 
