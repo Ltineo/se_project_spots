@@ -57,7 +57,6 @@ editProfileBtn.addEventListener("click", function () {
   editProfileNameInput.value = profileNameEl.textContent;
   editProfileDescriptionInput.value = profileDescriptionEl.textContent;
   openModal(editProfileModal);
-  openModal (editProfileModal);
 });
 editProfileCloseBtn.addEventListener("click", function () {
   closeModal(editProfileModal);
@@ -100,7 +99,7 @@ function getCardElement(data) {
   const cardDeleteBtnel = cardElement.querySelector(".card__delete-button");
   cardDeleteBtnel.addEventListener("click", function () >> { 
     cardElement.remove();
-    cardElement.null;
+    cardElement.null();
   });
  
   cardImageEl.addEventListener("click", function () >> {
