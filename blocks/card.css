@@ -24,11 +24,11 @@
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    opacity: 0.4;
     cursor: pointer;
 }
 
 .card__delete-button:hover {
+    background-color: #ff6565;
     opacity: 1;
 }
 
@@ -52,7 +52,7 @@
 
 
 .card__like-button {
-    background-image: url(../images/heart.svg);
+    background-image: url(../images/like.svg);
     width: 23px;
     height: 20px;
     border: none;
