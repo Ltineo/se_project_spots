@@ -25,6 +25,7 @@
     background-repeat: no-repeat;
     background-position: center;
     cursor: pointer;
+    border-radius: 50%;
 }
 
 .card__delete-button:hover {

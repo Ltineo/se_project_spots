@@ -136,6 +136,7 @@
   line-height: 24px;
   position: absolute;
   left: 0;
+  background-color: #212121;
 }
 
 @media screen and (max-width: 480px) {
@@ -175,7 +176,7 @@
 
 @media screen and (max-width: 627px) {
   /* placed below the media query to be overwritten */
-  .modal__close_type_preview {
+  .modal__close-btn_type_preview {
     top: -48px;
     right: 0;
   }
