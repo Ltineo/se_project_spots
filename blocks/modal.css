@@ -43,7 +43,7 @@
   background-color: transparent;
   border: none;
   opacity: 0.4; 
-  background-image: url("../images/close.svg"); 
+  background-image: url("../images/close-dark.svg"); 
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -58,7 +58,7 @@
 .modal__close-btn_type_preview{
   top: 0;
   right: -32px;
-  background-image: url(../images/close-dark.svg);
+  background-image: url(../images/close.svg);
   opacity: 1;
 }
 
@@ -80,7 +80,8 @@
 
 .modal__label {
   margin: 0 0 32px;
-  margin-bottom: 8px;
+  margin-bottom: 32px;
+  display: block;
 }
 
 .modal__input {
@@ -91,11 +92,29 @@
   border-radius: 8px;
   border: 1px solid #2121214d;
   font-size: 20px;
-  margin-bottom: 20px;
+
 }
+
+
 
  .modal__input::placeholder{
   color: #2121214d;
+}
+
+.modal__input:hover{
+  border: 1px solid rgb(33,33,33);
+}
+
+.modal__input_type_error {
+  border: 1px solid red;
+}
+
+modal__error {
+  display: block;
+  color: red;
+  font-size: 12px;
+  margin-top: 8px;
+  /*todo correct color and font size*/
 }
 
 .modal__submit-btn {
