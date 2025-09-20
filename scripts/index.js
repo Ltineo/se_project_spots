@@ -30,7 +30,7 @@ const initialCards = [
 const editProfileBtn = document.querySelector(".profile__edit-btn");
 const editProfileModal = document.querySelector("#edit-profile");
 const editProfileCloseBtn = editProfileModal.querySelector(".modal__close-btn");
-const profileForm = document.forms["profile-form"];
+const editprofileForm = document.forms["edit-profile-form"];
 const editProfileNameInput = editProfileModal.querySelector(
   "#profile-name-input"
 );
@@ -72,7 +72,7 @@ document.querySelectorAll('.modal__close-btn')
 const newPostForm = newPostModal.querySelector(".modal__form");
 const cardImageInput = newPostModal.querySelector("#card-image-input");
 const cardTitleInput = newPostModal.querySelector("#card-title-input");
-const CardSubmitBtn = newPostModal.querySelector(".modal__button");
+const CardSubmitBtn = newPostModal.querySelector(".modal-submit-button");
 
 
 const previewModal = document.querySelector("#preview-modal");
@@ -85,11 +85,6 @@ const previewCaptionEl = previewModal.querySelector(".modal__caption");
 const cardTemplate = document.querySelector("#card-template");
 const cardList = document.querySelector(".cards__list");
 
-function openModal(modal) {
-  modal.classList.add("modal_is-opened"); }
-
-function closeModal(modal) {
-  modal.classList.remove("modal_is-opened"); }
  
 
 function getCardElement(data) {
@@ -182,3 +177,11 @@ profileForm.addEventListener("submit", handleEditProfileFormSubmit);
 initialCards.forEach((cardData) => {
   renderCard(cardData, "append");
 });
+
+document.addEventListener("keydown", function(event) {
+     if (event.key === "Escape") {
+      const openModal = document.querySelector(".modal_is-opened");
+    if (openModal) {
+      closeModal(openModal);
+    }}});
+  

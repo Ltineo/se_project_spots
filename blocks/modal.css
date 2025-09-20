@@ -109,7 +109,7 @@
   border: 1px solid red;
 }
 
-modal__error {
+.modal__error {
   display: block;
   color: red;
   font-size: 12px;
@@ -159,7 +159,7 @@ modal__error {
 }
 
 @media screen and (max-width: 480px) {
-  .modal__content {
+  .modal__container {
     padding: 22px 12px 12px;
   }
 
@@ -167,7 +167,7 @@ modal__error {
     font-size: 24px;
   }
 
-  .modal__close {
+  .modal__close-btn {
     top:22px;
     right: 12px;
   }
