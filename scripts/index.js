@@ -71,7 +71,7 @@ document.querySelectorAll('.modal__close-btn')
 
 const newPostForm = newPostModal.querySelector(".modal__form");
 const cardImageInput = newPostModal.querySelector("#card-image-input");
-const cardTitleInput = newPostModal.querySelector("#card-title-input");
+const cardCaptionInput = newPostModal.querySelector("#card-caption-input");
 const CardSubmitBtn = newPostModal.querySelector(".modal-submit-button");
 
 
@@ -129,7 +129,7 @@ function handleNewPostFormSubmit(evt) {
   evt.preventDefault();
   console.log("Image link:", cardImageInput.value);
   const inputValues = {
-  name: cardTitleInput.value,
+  name: cardCaptionInput.value,
   link: cardImageInput.value,
 }
 
@@ -137,7 +137,7 @@ function handleNewPostFormSubmit(evt) {
 renderCard(inputValues, "prepend");
   evt.target.reset()
 
-  console.log("Title:", cardTitleInput.value);
+  console.log("Title:", cardCaptionInput.value);
   closeModal(newPostModal);
 }
 newPostBtn.addEventListener("click", function () {
@@ -155,20 +155,9 @@ function handleEditProfileFormSubmit(evt) {
   closeModal(editProfileModal);
 }
 
-function handleCardSubmit(evt) {
-  evt.preventDefault();
-  const inputValues = {
-    name: cardTitleInput.value,
-    link: cardImageInput.value,
-  };
-  renderCard(inputValues, "prepend");
-  evt.target.reset();
-  disableButton(CardSubmitBtn, settings);
-  closeModal(newPostModal);
-}
 
 
-profileForm.addEventListener("submit", handleEditProfileFormSubmit);
+editprofileForm.addEventListener("submit", handleEditProfileFormSubmit);
 
 
 
@@ -184,4 +173,10 @@ document.addEventListener("keydown", function(event) {
     if (openModal) {
       closeModal(openModal);
     }}});
+
+    editProfileModal.addEventListener('click', function(event) {
+    if (event.target === editProfileModal) {
+       closeModal(editProfileModal);
+    }
+});
   
