@@ -8,3 +8,13 @@
 @import url(../blocks/card.css);
 @import url(../blocks/footer.css);
 @import url(../blocks/modal.css);
+
+
+.input-error {
+  border: 2px solid red;
+}
+
+.modal__submit-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
