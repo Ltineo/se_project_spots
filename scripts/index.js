@@ -118,9 +118,6 @@ editprofileForm.addEventListener("submit", e => {
   closeModal(editProfileModal);
 });
 
-function enableValidation(form) {
-  const inputs = form.querySelectorAll("input[required]");
-  const submitButton = form.querySelector(".modal__submit-btn");
 
   function checkValidity() {
     let allValid = true;
