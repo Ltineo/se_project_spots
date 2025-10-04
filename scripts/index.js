@@ -119,24 +119,5 @@ editprofileForm.addEventListener("submit", e => {
 });
 
 
-  function checkValidity() {
-    let allValid = true;
-    inputs.forEach(input => {
-      if (!input.validity.valid) {
-        allValid = false;
-        input.classList.add("input-error");
-      } else input.classList.remove("input-error");
-    });
-    submitButton.disabled = !allValid;
-  }
-
-  inputs.forEach(input => input.addEventListener("input", checkValidity));
-  form.addEventListener("submit", e => {
-    checkValidity();
-    if (submitButton.disabled) e.preventDefault();
-  });
-
-  checkValidity();
-}
-
-document.querySelectorAll(".modal__form").forEach(enableValidation);
+  
+  

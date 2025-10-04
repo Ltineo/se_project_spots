@@ -8,13 +8,13 @@ const settings = {
 };
 
 const showInputError = (formEl, inputEl, errorMsg,config) => {
-  const errormgsEl = formEl.querySelector(`.${inputEl.id}-error`);
+  const errormgsEl = formEl.querySelector(`#${inputEl.id}-error`);
   errormgsEl.textContent = errorMsg;
   inputEl.classList.add("modal__input_type_error");
 };
 
 const hideInputError = (formEl, inputEl,config) => {
-  const errormgsEl = formEl.querySelector(`.${inputEl.id}-error`);
+  const errormgsEl = formEl.querySelector(`#${inputEl.id}-error`);
   errormgsEl.textContent = "";
   inputEl.classList.remove("modal__input_type_error");
 };
@@ -22,7 +22,7 @@ const hideInputError = (formEl, inputEl,config) => {
 
 const checkInputValidity = (formEl, inputEl,config) => {
   if (!inputEl.validity.valid) {
-    showInputError(formEl, inputEl, config.validationMessage);
+  showInputError(formEl, inputEl, inputEl.validationMessage, config);
 } else {
     hideInputError(formEl, inputEl, config);
   }
@@ -30,20 +30,21 @@ const checkInputValidity = (formEl, inputEl,config) => {
 
 const hasInvalidInput = (inputList,config) => {
   return inputList.some((inputEl) => {
-  return !inputEl.validity.valid;
-})};
+    return !inputEl.validity.valid; 
+  });
+};
 
 
-const toggleButtonState = (inputList, buttonEl,config) => {
+const toggleButtonState = (inputList, buttonEl, config) => {
 
-  if (hasInvalidInput(inputList)) {
-    disabledButton(buttonEl);
+  if (hasInvalidInput(inputList,config)) {
+  disabledButton(buttonEl);
   } else {
     buttonEl.disabled = false;
     buttonEl.classList.remove("modal__button_disabled");
 }};
 
-const disabledButton = (buttonEl,config) => {
+const disabledButton = (buttonEl) => {
   buttonEl.disabled = true;
 };
 
@@ -72,9 +73,7 @@ const buttonElement = formEl.querySelector(config.submitButtonSelector);
 
 const enableValidation = (config) => {
 const formlist = document.querySelectorAll(config.formSelector);
-formlist.forEach("formElement") => {
-    setEventsListeners(formElement,config);
-}};
-
-enableValidation(settings);
+formlist.forEach(formElement => {
+  setEventsListeners(formElement, config);
+})};
 
