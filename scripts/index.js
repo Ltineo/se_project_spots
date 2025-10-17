@@ -1,3 +1,10 @@
+import { 
+  enableValidation, 
+  resetValidation, 
+  toggleButtonState, 
+  settings 
+} from './validation.js';
+
 const initialCards = [
   { name: "Golden Gate Bridge", link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/7-photo-by-griffin-wooldridge-from-pexels.jpg" },
   { name: "Val Thorens", link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/1-photo-by-moritz-feldmann-from-pexels.jpg" },
@@ -8,10 +15,9 @@ const initialCards = [
   { name: "Mountain house", link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/6-photo-by-moritz-feldmann-from-pexels.jpg" },
 ];
 
-
 const editProfileBtn = document.querySelector(".profile__edit-btn");
 const editProfileModal = document.querySelector("#edit-profile");
-const editprofileForm = document.forms["edit-profile-form"];
+const editProfileForm = document.forms["edit-profile-form"];
 const editProfileNameInput = editProfileModal.querySelector("#profile-name-input");
 const editProfileDescriptionInput = editProfileModal.querySelector("#profile-description-input");
 
@@ -31,6 +37,7 @@ const previewCaptionEl = previewModal.querySelector(".modal__caption");
 const cardTemplate = document.querySelector("#card-template");
 const cardList = document.querySelector(".cards__list");
 
+
 function handleEscapeKey(evt) {
   if (evt.key === "Escape") {
     const openModalEl = document.querySelector(".modal_is-opened");
@@ -38,41 +45,62 @@ function handleEscapeKey(evt) {
   }
 }
 
-
 function openModal(modal) {
   modal.classList.add("modal_is-opened");
   document.addEventListener("keydown", handleEscapeKey);
 }
+
 function closeModal(modal) {
   modal.classList.remove("modal_is-opened");
   document.removeEventListener("keydown", handleEscapeKey);
 }
 
-editProfileBtn.addEventListener("click", () => {
-  editProfileNameInput.value = profileNameEl.textContent;
-  editProfileDescriptionInput.value = profileDescriptionEl.textContent;
-  openModal(editProfileModal);
-});
-
 document.querySelectorAll(".modal__close-btn").forEach(btn => {
   btn.addEventListener("click", () => closeModal(btn.closest(".modal")));
 });
-
 
 document.querySelectorAll(".modal").forEach(modal => {
   modal.addEventListener("click", e => {
     if (e.target === modal) closeModal(modal);
   });
 });
+ 
 
+editProfileBtn.addEventListener("click", () => {
+  editProfileNameInput.value = profileNameEl.textContent;
+  editProfileDescriptionInput.value = profileDescriptionEl.textContent;
 
-document.addEventListener("keydown", e => {
-  if (e.key === "Escape") {
-    const openModalEl = document.querySelector(".modal_is-opened");
-    if (openModalEl) closeModal(openModalEl);
-  }
+  resetValidation(editProfileForm, [editProfileNameInput, editProfileDescriptionInput], settings);
+
+  openModal(editProfileModal);
 });
 
+editProfileForm.addEventListener("submit", e => {
+  e.preventDefault();
+  profileNameEl.textContent = editProfileNameInput.value;
+  profileDescriptionEl.textContent = editProfileDescriptionInput.value;
+  closeModal(editProfileModal);
+});
+
+
+newPostBtn.addEventListener("click", () => openModal(newPostModal));
+
+newPostForm.addEventListener("submit", e => {
+  e.preventDefault();
+
+  const newCard = { name: cardCaptionInput.value, link: cardImageInput.value };
+  renderCard(newCard, "prepend");
+
+  newPostForm.reset();
+
+  toggleButtonState(
+    Array.from(newPostForm.querySelectorAll(settings.inputSelector)),
+    newPostForm.querySelector(settings.submitButtonSelector),
+    settings
+  );
+
+  closeModal(newPostModal);
+});
 
 function getCardElement(data) {
   const cardElement = cardTemplate.content.querySelector(".card").cloneNode(true);
@@ -107,26 +135,6 @@ function renderCard(cardData, method = "append") {
   else cardList.prepend(cardElement);
 }
 
-
 initialCards.forEach(card => renderCard(card, "append"));
 
-newPostBtn.addEventListener("click", () => openModal(newPostModal));
-newPostForm.addEventListener("submit", e => {
-  e.preventDefault();
-  const newCard = { name: cardCaptionInput.value, link: cardImageInput.value };
-  renderCard(newCard, "prepend");
-  newPostForm.reset();
-  closeModal(newPostModal);
-});
-
-
-editprofileForm.addEventListener("submit", e => {
-  e.preventDefault();
-  profileNameEl.textContent = editProfileNameInput.value;
-  profileDescriptionEl.textContent = editProfileDescriptionInput.value;
-  closeModal(editProfileModal);
-});
-
-
-  
-  
+enableValidation(settings);
