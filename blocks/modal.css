@@ -111,10 +111,15 @@
 
 .modal__error {
   display: block;
+  visibility: hidden;
   color: red;
   font-size: 12px;
   margin-top: 8px;
-  /*todo correct color and font size*/
+}
+
+.modal__error_visible {
+  visibility: visible;
+  display: block;
 }
 
 .modal__submit-btn {
@@ -130,6 +135,12 @@
 
 .modal__submit-btn:hover {
   opacity: 0.8;
+}
+
+.modal__submit-btn_disabled {
+  background-color: #2121214d;
+  cursor: default;
+  opacity: 1;
 }
 
 .modal__image-container {

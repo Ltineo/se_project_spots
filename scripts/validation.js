@@ -1,22 +1,24 @@
 const settings = {
   formSelector: ".modal__form",
   inputSelector: ".modal__input",
-  submitButtonSelector: ".modal__submit-button",
+  submitButtonSelector: ".modal__submit-btn",
   inactiveButtonClass: "modal__submit-btn_disabled",
   inputErrorClass: "modal__input_type_error",
   errorClass: "modal__error_visible",
 };
 
-const showInputError = (formEl, inputEl, errorMsg,config) => {
-  const errormgsEl = formEl.querySelector(`#${inputEl.id}-error`);
-  errormgsEl.textContent = errorMsg;
-  inputEl.classList.add(config.inputErrorClass); 
+const showInputError = (formEl, inputEl, errorMsg, config) => {
+  const errormsgEl = formEl.querySelector(`#${inputEl.id}-error`);
+  errormsgEl.textContent = errorMsg;
+  inputEl.classList.add(config.inputErrorClass);
+  errormsgEl.classList.add(config.errorClass); 
 };
 
 const hideInputError = (formEl, inputEl,config) => {
-  const errormgsEl = formEl.querySelector(`#${inputEl.id}-error`);
-  errormgsEl.textContent = "";
+  const errormsgEl = formEl.querySelector(`#${inputEl.id}-error`);
+  errormsgEl.textContent = "";
   inputEl.classList.remove(config.inputErrorClass);
+  errormsgEl.classList.remove(config.errorClass);
 };
 
 
@@ -38,14 +40,15 @@ const hasInvalidInput = (inputList,config) => {
 const toggleButtonState = (inputList, buttonEl, config) => {
 
   if (hasInvalidInput(inputList,config)) {
-  disabledButton(buttonEl);
+  disabledButton(buttonEl, config);
   } else {
     buttonEl.disabled = false;
     buttonEl.classList.remove(config.inactiveButtonClass);
 }};
 
-const disabledButton = (buttonEl) => {
+const disabledButton = (buttonEl, config) => {
   buttonEl.disabled = true;
+  buttonEl.classList.add(config.inactiveButtonClass);
 };
 
 const resetValidation = (formEl, inputList,config) => {
@@ -80,8 +83,8 @@ formlist.forEach(formElement => {
 enableValidation({
   formSelector: ".modal__form",
   inputSelector: ".modal__input",
-  submitButtonSelector: ".modal__button",
-  inactiveButtonClass: "modal__button_disabled",
+  submitButtonSelector: ".modal__submit-btn",
+  inactiveButtonClass: "modal__submit-btn_disabled",
   inputErrorClass: "modal__input_type_error",
   errorClass: "modal__error_visible",
 })
