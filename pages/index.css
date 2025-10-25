@@ -10,7 +10,7 @@
 @import url(../blocks/modal.css);
 
 
-.input-error {
+.modal__input_type_error {
   border: 2px solid red;
 }
 

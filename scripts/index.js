@@ -5,6 +5,7 @@ import {
   settings 
 } from './validation.js';
 
+
 const initialCards = [
   { name: "Golden Gate Bridge", link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/7-photo-by-griffin-wooldridge-from-pexels.jpg" },
   { name: "Val Thorens", link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/1-photo-by-moritz-feldmann-from-pexels.jpg" },
@@ -64,13 +65,15 @@ document.querySelectorAll(".modal").forEach(modal => {
     if (e.target === modal) closeModal(modal);
   });
 });
- 
+
 
 editProfileBtn.addEventListener("click", () => {
   editProfileNameInput.value = profileNameEl.textContent;
   editProfileDescriptionInput.value = profileDescriptionEl.textContent;
 
-  resetValidation(editProfileForm, [editProfileNameInput, editProfileDescriptionInput], settings);
+
+  const inputList = Array.from(editProfileForm.querySelectorAll(settings.inputSelector));
+  resetValidation(editProfileForm, inputList, settings);
 
   openModal(editProfileModal);
 });
@@ -93,14 +96,14 @@ newPostForm.addEventListener("submit", e => {
 
   newPostForm.reset();
 
-  toggleButtonState(
-    Array.from(newPostForm.querySelectorAll(settings.inputSelector)),
-    newPostForm.querySelector(settings.submitButtonSelector),
-    settings
-  );
+
+  const inputList = Array.from(newPostForm.querySelectorAll(settings.inputSelector));
+  const buttonEl = newPostForm.querySelector(settings.submitButtonSelector);
+  toggleButtonState(inputList, buttonEl, settings);
 
   closeModal(newPostModal);
 });
+
 
 function getCardElement(data) {
   const cardElement = cardTemplate.content.querySelector(".card").cloneNode(true);
@@ -131,8 +134,11 @@ function getCardElement(data) {
 
 function renderCard(cardData, method = "append") {
   const cardElement = getCardElement(cardData);
-  if (method === "append") cardList.append(cardElement);
-  else cardList.prepend(cardElement);
+  if (method === "append") {
+    cardList.append(cardElement);
+  } else {
+    cardList.prepend(cardElement);
+  }
 }
 
 initialCards.forEach(card => renderCard(card, "append"));
