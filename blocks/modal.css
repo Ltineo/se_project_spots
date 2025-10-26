@@ -169,12 +169,16 @@
   background-color: #212121;
 }
 
+.modal__container {
+  box-sizing: border-box;
+}
+
 @media screen and (max-width: 480px) {
   .modal__container {
-    padding: 22px 12px 12px;
+    padding: 24px 16px;
   }
 
-  .modal__title {
+ .modal__title {
     font-size: 24px;
   }
 
