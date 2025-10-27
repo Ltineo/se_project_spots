@@ -7,21 +7,6 @@
 @import url(../blocks/cards.css);
 @import url(../blocks/card.css);
 @import url(../blocks/footer.css);
-@import url(./modal.css);
-
-.modal__input {
-  width: 100%;
-  max-width: 500px;
-  margin: 8px 0 0;
-}
+@import url(../blocks/modal.css);
 
 
-
-.modal__input_type_error {
-  border: 2px solid red;
-}
-
-.modal__submit-btn:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
