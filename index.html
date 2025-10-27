@@ -13,15 +13,15 @@
   <body>
     <div class="page">
       <header class="header page__section">
-  <img src="./images/logo.svg" alt="Spot logo" class="header__logo" />
-  <nav class="header__nav">
-    <ul class="header__nav-list">
-      <li><a href="#profile" class="header__nav-link">Profile</a></li>
-      <li><a href="#posts" class="header__nav-link">Posts</a></li>
-      <li><a href="#contact" class="header__nav-link">Contact</a></li>
-    </ul>
-  </nav>
-</header>
+        <img src="./images/logo.svg" alt="Spot logo" class="header__logo" />
+        <nav class="header__nav">
+          <ul class="header__nav-list">
+            <li><a href="#profile" class="header__nav-link">Profile</a></li>
+            <li><a href="#posts" class="header__nav-link">Posts</a></li>
+            <li><a href="#contact" class="header__nav-link">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
       <main class="content">
         <section class="profile page__section">
           <img
@@ -45,25 +45,20 @@
             <template id="card-template">
               <li class="card">
                 <button class="card__delete-button" type="button"></button>
-                <img
-                  src="#"
-                  alt=""
-                  class="card__image"
-                />
+                <img src="#" alt="" class="card__image" />
                 <div class="card__content">
                   <h2 class="card__title"></h2>
                   <button type="button" class="card__like-button"></button>
                 </div>
               </li>
             </template>
-            
           </ul>
         </section>
       </main>
       <footer class="footer page__section">
         <p class="footer__copyright">2023 &copy; Spots</p>
       </footer>
-  <div class="modal" id="edit-profile">
+      <div class="modal" id="edit-profile">
         <div class="modal__container">
           <button type="button" class="modal__close-btn"></button>
           <h2 class="modal__title">Edit profile</h2>
@@ -103,10 +98,9 @@
 
       <div class="modal" id="new-post">
         <div class="modal__container">
-          <button type="button" class="modal__close-btn">
-          </button>
+          <button type="button" class="modal__close-btn"></button>
           <h2 class="modal__title">New Post</h2>
-          <form class="modal__form" id="card-form" novalidate> 
+          <form class="modal__form" id="card-form" novalidate>
             <label for="card-image-input" class="modal__label">
               Image link
               <input
@@ -118,35 +112,36 @@
               />
               <span class="modal__error" id="card-image-input-error"></span>
             </label>
-            
-             <label for="card-caption-input" class="modal__label">
+
+            <label for="card-caption-input" class="modal__label">
               Caption
               <input
                 id="card-caption-input"
                 type="text"
                 class="modal__input"
                 placeholder="Type your caption"
-                minlength="2" 
+                minlength="2"
                 maxlength="30"
                 required
-                />
-               <span class="modal__error" id="card-caption-input-error"></span>
-              </label>
+              />
+              <span class="modal__error" id="card-caption-input-error"></span>
+            </label>
             <button type="submit" class="modal__submit-btn">Save</button>
           </form>
         </div>
       </div>
-     <div class="modal modal_type_preview" id="preview-modal">
+      <div class="modal modal_type_preview" id="preview-modal">
         <div class="modal__image-container">
-          <button aria-label="close modal" type="button" class="modal__close-btn modal__close-btn_type_preview">
-          </button>
-         <img src="#" alt="" class="modal__image">
+          <button
+            aria-label="close modal"
+            type="button"
+            class="modal__close-btn modal__close-btn_type_preview"
+          ></button>
+          <img src="#" alt="" class="modal__image" />
           <p class="modal__caption"></p>
-          
         </div>
-      </div> 
+      </div>
     </div>
     <script type="module" src="./scripts/index.js"></script>
-
   </body>
 </html>

@@ -81,8 +81,8 @@
   opacity: 0.8;
 }
 
-.profile__edit-icon
-,.profile__add-icon {
+.profile__edit-icon,
+.profile__add-icon {
   width: 16px;
   height: 16px;
 }

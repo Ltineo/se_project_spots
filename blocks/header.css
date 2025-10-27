@@ -1,19 +1,18 @@
 .header {
-    background-color: #fff;
-    padding: 10px 0;
-    display: flex;
-    justify-content: center;
+  background-color: #fff;
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
 }
 
-
 .header__logo {
-    width: 94px;
-    height: 26px;
+  width: 94px;
+  height: 26px;
 }
 
 .header {
   display: flex;
-  justify-content: space-between; 
+  justify-content: space-between;
   align-items: center;
   padding: 20px 40px;
   background-color: #fff;
@@ -22,7 +21,7 @@
 .header__nav-list {
   display: flex;
   list-style: none;
-  gap: 24px; 
+  gap: 24px;
   margin: 0;
   padding: 0;
 }
